@@ -1,17 +1,17 @@
 # IoT with Grafana
-This repository contains information on how to start with IoT using [Arduino](https://www.arduino.cc/), [Grafana](https://grafana.com/oss/grafana/), [Prometheus](https://prometheus.io/) and [Grafana Loki](https://grafana.com/oss/loki/). In this repository, we will use [Grafana Cloud](https://grafana.com/products/cloud/) that includes hosted Grafana, Prometheus and Loki to remove the overhead of installing and maintaining these systems. All of these projects are open source and if you want, you can run them by yourself. 
+This repository contains information on how to start with IoT using [Arduino](https://www.arduino.cc/), [Grafana](https://grafana.com/oss/grafana/), [Prometheus](https://prometheus.io/) and [Grafana Loki](https://grafana.com/oss/loki/). In this repository, we will use [Grafana Cloud](https://grafana.com/products/cloud/) that includes hosted Grafana, Prometheus and Loki to remove the overhead of installing and maintaining these systems. All of these projects are open source and therefore if you want, you can run them by yourself. 
 
 ## Contents
-1. Set up Arduino IDE
-1. Set up Grafana Cloud 
+1. Setting up and using Arduino IDE
+1. Setting up Grafana Cloud 
 1. Using Loki and Prometheus libraries
 1. Example of projects built with Arduino and Grafana Cloud
 
-## Set up Arduino IDE
-The open source Arduino IDE makes it easy to write code and upload it to the board. The Arduino software is easy-to-use for beginners, yet flexible enough for advanced users. 
+## Setting up and using Arduino IDE
+The open source Arduino IDE makes it easy to write code and upload it to the board. The Arduino software is easy to use for beginners, yet flexible enough for advanced users. 
 
 ### Installing
-To start, we are going to have to install [Arduino IDE](https://www.arduino.cc/en/Guide), a platform that’s used to write and upload programs to Arduino compatible boards. 
+To start, we are going to install [Arduino IDE](https://www.arduino.cc/en/Guide), a platform that’s used to write and upload programs to Arduino compatible boards. Follow the installing instruction for your OS.
 
 ### Set up Arduino IDE to support ESP32 board
 This step is not necessary if Arduino hardware is used. If you decide to use ESP32 development boards _(we are using ESP32 boards in most of the projects listed below)_, we will need to do couple additional steps:
@@ -27,10 +27,13 @@ Now, in Tools > Boards, you are able to select your ESP32 board. This tells the 
 
 ### Using Arduino IDE and uploading program
 
-In the Arduino environment, the programs that we are writing are called sketches.Before uploading the sketches to your development board, make sure that:
-- Sketch can be compiled. Click on the ***Verify button*** on top that goes through your sketch, checks for errors and compiles it. 
+In the Arduino environment, the programs that we are writing are called sketches. Before uploading the sketches to your development board, make sure that:
+- Sketch can be compiled. Click on the ***Verify button*** on top of IDE. Verifying goes through your sketch, checks for errors and compiles it. 
 - In the ***Tools > Board*** submenu, you’ve selected the correct type of development port
 - In the ***Tools > Port*** submenu, you’ve selected the new correct COM port
+- In the ***Tools > Board*** submenu, you’ve selected the correct type of development port
+
+Sketches are then uploaded to development board using ***Upload button*** on top of IDE.
 
 ## Set up Grafana Cloud
 As mentioned, we are going to be using Grafana Cloud — which comes with hosted Grafana, Grafana Loki, and Graphite — for our data storage and data visualization. The free tier comes with 10,000 series for Prometheus metrics and 50GB for logs in Loki, which is definitely more than enough for simple monitoring solutions. 
