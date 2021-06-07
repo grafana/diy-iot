@@ -32,7 +32,7 @@ To start, we'll visit [Grafana Cloud signup](https://grafana.com/auth/sign-up/cr
 <img src="https://user-images.githubusercontent.com/30407135/120991670-25df5000-c782-11eb-9226-031dca99ae68.png" alt="grafana cloud" height="500"/>
 
 At this point, or anytime in the future, we can create the API keys for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API key can be created by clicking on **_API Keys_** in the navigation on the left side. Then we click on **_+ Add API Key_** and create API keys. 
-<img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="grafana cloud" height="500"/>
+<img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="grafana cloud" />
 
 ## Using Loki and Prometheus libraries
 
