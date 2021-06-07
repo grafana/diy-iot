@@ -1,10 +1,10 @@
-# IoT with Grafana
+# IoT with Arduino and Grafana
 This repository contains information on how to start with IoT using [Arduino](https://www.arduino.cc/), [Grafana](https://grafana.com/oss/grafana/), [Prometheus](https://prometheus.io/) and [Grafana Loki](https://grafana.com/oss/loki/). In this repository, we will use [Grafana Cloud](https://grafana.com/products/cloud/) that includes hosted Grafana, Prometheus and Loki to remove the overhead of installing and maintaining these systems. All of these projects are open source and therefore if you want, you can run them by yourself. 
 
 ## Contents
 1. Setting up and using Arduino IDE
-1. Setting up Grafana Cloud 
-1. Using Loki and Prometheus libraries
+1. Setting up and using Grafana Cloud 
+1. Loki and Prometheus libraries
 1. Example of projects built with Arduino and Grafana Cloud
 
 ## Setting up and using Arduino IDE
@@ -35,14 +35,19 @@ In the Arduino environment, the programs that we are writing are called sketches
 
 Sketches are then uploaded to development board using ***Upload button*** on top of IDE.
 
-## Set up Grafana Cloud
+## Setting up and using Grafana Cloud 
 As mentioned, we are going to be using Grafana Cloud — which comes with hosted Grafana, Grafana Loki, and Graphite — for our data storage and data visualization. The free tier comes with 10,000 series for Prometheus metrics and 50GB for logs in Loki, which is definitely more than enough for simple monitoring solutions. 
 
+### Creating account 
 To start, we'll visit [Grafana Cloud signup](https://grafana.com/auth/sign-up/create-user) and create a new account. As soon as the account is all set up, we can see the portal with hosted Grafana, Loki, and Prometheus instances.
 <img src="https://user-images.githubusercontent.com/30407135/120991670-25df5000-c782-11eb-9226-031dca99ae68.png" alt="grafana cloud" height="500"/>
 
+### API Keys
 At this point, or anytime in the future, we can create the API keys for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API key can be created by clicking on ***API Keys*** in the navigation on the left side. Then we click on ***+ Add API Key*** and create API keys. 
 <img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="grafana cloud" />
+
+### Visualised data in Grafana
+Hosted Loki & Prometheus instances are automatically added as data sources in your hosted Grafana. You can find them under the name `grafanacloud-NAME-logs` and  `grafanacloud-NAME-prom`. You can use these data sources with data from monitoring solutions to create dahsboards or use them in Explore. 
 
 ## Using Loki and Prometheus libraries
 
