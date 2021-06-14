@@ -42,7 +42,62 @@ As mentioned, we are going to be using Grafana Cloud — which comes with hosted
 To start, we'll visit [Grafana Cloud signup](https://grafana.com/auth/sign-up/create-user) and create a new account. As soon as the account is all set up, we can see the portal with hosted Grafana, Loki, and Prometheus instances.
 <img src="https://user-images.githubusercontent.com/30407135/120991670-25df5000-c782-11eb-9226-031dca99ae68.png" alt="grafana cloud" height="500"/>
 
-### API Keys
+#### Sending Metrics
+
+To setup your project for sennding metrics, click on the `Send Metrics` button
+
+![image](https://user-images.githubusercontent.com/10332331/121828047-63654100-cc8c-11eb-888c-6a3f331ecfea.png)
+
+From the next page, first you will want to copy the `Remote Write Endpoint` address
+
+![image](https://user-images.githubusercontent.com/10332331/121828126-a6bfaf80-cc8c-11eb-818f-dbdb62412fc5.png)
+
+And put the value in  your `config.h`
+
+```
+#define GC_URL "prometheus-blocks-prod-us-central1.grafana.net"
+```
+
+Next copy the `Username / Instance ID`
+
+![image](https://user-images.githubusercontent.com/10332331/121828819-b5a76180-cc8e-11eb-9f37-23dd2406d3f8.png)
+
+```
+#define GC_USER "137822"
+```
+
+Then create an API key by clicking `Generate now`
+
+![image](https://user-images.githubusercontent.com/10332331/121829204-df14bd00-cc8f-11eb-9829-17e48cacf47d.png)
+
+Give the key a meaingful name and choose `MetricsPublisher`
+
+![image](https://user-images.githubusercontent.com/10332331/121829290-184d2d00-cc90-11eb-91d3-78e0f6e4ec28.png)
+
+
+Then click `Create API Key`
+
+Copy the value into the `GC_PASS` field
+
+```
+#define GC_PASS "eyJrIjoiMTkzNDFkMzM2YTNhZTRlNmE4ZDkyMjgzSTBhNGFiYTcwY2VjMzVjNiIsIm4iOiJlc3AzMi10ZXN0LTMiLCJpZCI6NDIwMDY1fQ=="
+```
+
+The final result should look something like:
+
+```
+#define WIFI_SSID     "your_ssid"
+#define WIFI_PASSWORD "your_wifi_password"
+
+#define GC_URL "prometheus-blocks-prod-us-central1.grafana.net"
+#define GC_PATH "/api/prom/push"
+#define GC_PORT 443
+#define GC_USER "137822"
+#define GC_PASS "eyJrIjoiMTkzNDFkMzM2YTNhZTRlNmE4ZDkyMjgzSTBhNGFiYTcwY2VjMzVjNiIsIm4iOiJlc3AzMi10ZXN0LTMiLCJpZCI6NDIwMDY1fQ=="
+```
+
+
+### Creating more API Keys
 At this point, or anytime in the future, we can create the API keys for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API key can be created by clicking on ***API Keys*** in the navigation on the left side. Then we click on ***+ Add API Key*** and create API keys. 
 <img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="grafana cloud" />
 
