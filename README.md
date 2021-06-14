@@ -2,9 +2,11 @@
 This repository contains information on how to start with IoT using [Arduino](https://www.arduino.cc/), [Grafana](https://grafana.com/oss/grafana/), [Prometheus](https://prometheus.io/) and [Grafana Loki](https://grafana.com/oss/loki/). In this repository, we will use [Grafana Cloud](https://grafana.com/products/cloud/) that includes hosted Grafana, Prometheus and Loki to remove the overhead of installing and maintaining these systems. All of these projects are open source and therefore if you want, you can run them by yourself. 
 
 ## Contents
-1. Setting up and using Arduino IDE
-1. Setting up and using Grafana Cloud 
-1. Loki and Prometheus libraries
+1. [Setting up and using Arduino IDE](#setting-up-and-using-arduino-ide)
+1. [Using Loki and Prometheus libraries]
+1. [Setting up and using Grafana Cloud](#setting-up-and-using-grafana-cloud)
+1. [Sending Metrics](#sending-metrics)
+1. [Sending Logs](#sending-logs)
 1. Example of projects built with Arduino and Grafana Cloud
 
 ## Setting up and using Arduino IDE
