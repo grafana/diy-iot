@@ -98,6 +98,49 @@ The final result should look something like:
 #define GC_PASS "eyJrIjoiMTkzNDFkMzM2YTNhZTRlNmE4ZDkyMjgzSTBhNGFiYTcwY2VjMzVjNiIsIm4iOiJlc3AzMi10ZXN0LTMiLCJpZCI6NDIwMDY1fQ=="
 ```
 
+#### Sending Logs
+
+Similar to metrics, click the `Sending Logs` button
+
+![image](https://user-images.githubusercontent.com/10332331/121830077-3ae04580-cc92-11eb-9663-a02e10a27349.png)
+
+We will take some values from the `Data Source Settings` section starting with the URL
+
+![image](https://user-images.githubusercontent.com/10332331/121830346-d376c580-cc92-11eb-9157-aa844b9bf723.png)
+
+```
+#define GC_URL "logs-prod-us-central1.grafana.net"
+```
+
+Next grab the `User`
+
+![image](https://user-images.githubusercontent.com/10332331/121830467-1df84200-cc93-11eb-851e-517bf98b484e.png)
+
+```
+#define GC_USER "8435"
+```
+
+And now generate an API key by clicking `Generate now`
+
+![image](https://user-images.githubusercontent.com/10332331/121830638-6f083600-cc93-11eb-8e16-8ba44ddbffaa.png)
+
+Create a meaninful name and choose `MetricsPublisher`
+
+![image](https://user-images.githubusercontent.com/10332331/121830668-834c3300-cc93-11eb-9c15-3cc323382824.png)
+
+The final `config.h` should look similar to this
+
+```
+#define WIFI_SSID     "your_ssid"
+#define WIFI_PASSWORD "your_wifi_pass"
+
+#define GC_URL "logs-prod-us-central1.grafana.net"
+#define GC_PORT 443
+#define GC_PATH "/loki/api/v1/push"
+#define GC_USER "8435"
+#define GC_PASS "eyJrIjoiMTkzNDFkMzM2YTNhZTRlNmE4ZDkyMjgzSTBhNGFiYTcwY2VjMzVjNiIsIm4iOiJlc3AzMi10ZXN0LTMiLCJpZCI6NDIwMDY1fQ=="
+```
+
 
 ### Creating more API Keys
 At this point, or anytime in the future, we can create the API keys for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API key can be created by clicking on ***API Keys*** in the navigation on the left side. Then we click on ***+ Add API Key*** and create API keys. 
