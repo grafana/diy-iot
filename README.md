@@ -5,10 +5,10 @@ This repository contains information on how to start with IoT using [Arduino](ht
 ## Contents
 
 1. [Setting up and using Arduino IDE](#setting-up-and-using-arduino-ide)
-1. [Using Loki and Prometheus libraries](#using-loki-and-prometheus-libraries)
 1. [Setting up and using Grafana Cloud](#setting-up-and-using-grafana-cloud)
 1. [Sending Metrics](#sending-metrics)
 1. [Sending Logs](#sending-logs)
+1. [Using Loki and Prometheus libraries](#using-loki-and-prometheus-libraries)
 1. [Examples of projects built with Arduino and Grafana Cloud](#examples-of-projects-built-with-arduino-and-grafana-cloud)
 
 ## Setting up and using Arduino IDE
