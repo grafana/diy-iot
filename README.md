@@ -199,3 +199,5 @@ We have created couple of DIY IoT projects that you can easily create by yoursel
 1. [Sourdough monitoring](https://github.com/ivanahuckova/sourdough_monitoring_grafana)
 1. [Avocado plant monitoring](https://github.com/ivanahuckova/avocado_monitoring_grafana)
 1. [Candle monitoring](https://github.com/ivanahuckova/candle_monitoring_grafana)
+1. [Dog tracking](https://github.com/slim-bean/sully-tracker)
+1. [Time tracking)(https://github.com/slim-bean/timefidget)
