@@ -26,11 +26,16 @@ This step is not necessary if Arduino hardware is used. If you decide to use ESP
 1. If your OS won’t recognize the USB serial automatically, you’ll probably need to install **[CP210x USB to UART Bridge VCP Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)** that lets your computer communicate with your development board.
 
 1. **Add ESP32 boards definition** that adds support for the EP32 board. Go to **_Arduino > Preferences_** and add url https://dl.espressif.com/dl/package_esp32_index.json to the Additional Boards Manager URLs input. This open-source board definition adds support for programming ESP32 boards.
-   <img src="https://user-images.githubusercontent.com/30407135/120989143-8325d200-c77f-11eb-8818-0f9974678867.png" alt="arduino" height="500"/>
+   
+   <img src="https://user-images.githubusercontent.com/30407135/120989143-8325d200-c77f-11eb-8818-0f9974678867.png" alt="arduino" width="600"/>
+   
    Then go to Tools > Boards > Boards Manager and add ESP32 board manager.
-   <img src="https://user-images.githubusercontent.com/30407135/120989440-d8fa7a00-c77f-11eb-95b3-05f1a2d7b9c5.png" alt="arduino" height="500"/>
+   
+   <img src="https://user-images.githubusercontent.com/30407135/120989440-d8fa7a00-c77f-11eb-95b3-05f1a2d7b9c5.png" alt="arduino" width="600"/>
+   
    Now, in Tools > Boards, you are able to select your ESP32 board. This tells the Arduino IDE which profile and base libraries to use when compiling the firmware image, and how to flash it to the board.
-   <img src="https://user-images.githubusercontent.com/30407135/120989739-2545ba00-c780-11eb-8caf-be2da7ea98ba.png" alt="arduino" height="500"/>
+   
+   <img src="https://user-images.githubusercontent.com/30407135/120989739-2545ba00-c780-11eb-8caf-be2da7ea98ba.png" alt="arduino" width="600"/>
 
 ### Using Arduino IDE and uploading program
 
@@ -50,17 +55,18 @@ As mentioned, we are going to be using Grafana Cloud — which comes with hosted
 ### Creating account
 
 To start, we'll visit [Grafana Cloud signup](https://grafana.com/auth/sign-up/create-user) and create a new account. As soon as the account is all set up, we can see the portal with hosted Grafana, Loki, and Prometheus instances.
-<img src="https://user-images.githubusercontent.com/30407135/120991670-25df5000-c782-11eb-9226-031dca99ae68.png" alt="grafana cloud" height="500"/>
+
+<img src="https://user-images.githubusercontent.com/30407135/120991670-25df5000-c782-11eb-9226-031dca99ae68.png" alt="grafana cloud" width="600"/>
 
 #### Sending Metrics
 
 To setup your project for sennding metrics, click on the `Send Metrics` button
 
-![image](https://user-images.githubusercontent.com/10332331/121828047-63654100-cc8c-11eb-888c-6a3f331ecfea.png)
+<img src="https://user-images.githubusercontent.com/10332331/121828047-63654100-cc8c-11eb-888c-6a3f331ecfea.png" alt="send metrics" width="600"/>
 
 From the next page, first you will want to copy the `Remote Write Endpoint` address
 
-![image](https://user-images.githubusercontent.com/10332331/121828126-a6bfaf80-cc8c-11eb-818f-dbdb62412fc5.png)
+<img src="https://user-images.githubusercontent.com/10332331/121828126-a6bfaf80-cc8c-11eb-818f-dbdb62412fc5.png" alt="send metrics" width="600"/>
 
 And put the value in your `config.h`
 
@@ -70,7 +76,7 @@ And put the value in your `config.h`
 
 Next copy the `Username / Instance ID`
 
-![image](https://user-images.githubusercontent.com/10332331/121828819-b5a76180-cc8e-11eb-9f37-23dd2406d3f8.png)
+<img src="https://user-images.githubusercontent.com/10332331/121828819-b5a76180-cc8e-11eb-9f37-23dd2406d3f8.png" alt="send metrics" width="600"/>
 
 ```
 #define GC_USER "137822"
@@ -78,11 +84,11 @@ Next copy the `Username / Instance ID`
 
 Then create an API key by clicking `Generate now`
 
-![image](https://user-images.githubusercontent.com/10332331/121829204-df14bd00-cc8f-11eb-9829-17e48cacf47d.png)
+<img src="https://user-images.githubusercontent.com/10332331/121829204-df14bd00-cc8f-11eb-9829-17e48cacf47d.png" alt="send metrics" width="600"/>
 
 Give the key a meaingful name and choose `MetricsPublisher`
 
-![image](https://user-images.githubusercontent.com/10332331/121829290-184d2d00-cc90-11eb-91d3-78e0f6e4ec28.png)
+<img src="https://user-images.githubusercontent.com/10332331/121829290-184d2d00-cc90-11eb-91d3-78e0f6e4ec28.png" alt="send metrics" width="600"/>
 
 Then click `Create API Key`
 
@@ -109,11 +115,11 @@ The final result should look something like:
 
 Similar to metrics, click the `Sending Logs` button
 
-![image](https://user-images.githubusercontent.com/10332331/121830077-3ae04580-cc92-11eb-9663-a02e10a27349.png)
+<img src="https://user-images.githubusercontent.com/10332331/121830077-3ae04580-cc92-11eb-9663-a02e10a27349.png" alt="send logs" width="600"/>
 
 We will take some values from the `Data Source Settings` section starting with the URL
 
-![image](https://user-images.githubusercontent.com/10332331/121830346-d376c580-cc92-11eb-9157-aa844b9bf723.png)
+<img src="https://user-images.githubusercontent.com/10332331/121830346-d376c580-cc92-11eb-9157-aa844b9bf723.png" alt="send logs" width="600"/>
 
 ```
 #define GC_URL "logs-prod-us-central1.grafana.net"
@@ -121,7 +127,7 @@ We will take some values from the `Data Source Settings` section starting with t
 
 Next grab the `User`
 
-![image](https://user-images.githubusercontent.com/10332331/121830467-1df84200-cc93-11eb-851e-517bf98b484e.png)
+<img src="https://user-images.githubusercontent.com/10332331/121830467-1df84200-cc93-11eb-851e-517bf98b484e.png" alt="send logs" width="600"/>
 
 ```
 #define GC_USER "8435"
@@ -129,11 +135,11 @@ Next grab the `User`
 
 And now generate an API key by clicking `Generate now`
 
-![image](https://user-images.githubusercontent.com/10332331/121830638-6f083600-cc93-11eb-8e16-8ba44ddbffaa.png)
+<img src="https://user-images.githubusercontent.com/10332331/121830638-6f083600-cc93-11eb-8e16-8ba44ddbffaa.png" alt="send logs" width="600"/>
 
 Create a meaninful name and choose `MetricsPublisher`
 
-![image](https://user-images.githubusercontent.com/10332331/121830668-834c3300-cc93-11eb-9c15-3cc323382824.png)
+<img src="https://user-images.githubusercontent.com/10332331/121830668-834c3300-cc93-11eb-9c15-3cc323382824.png" alt="send logs" width="600"/>
 
 The final `config.h` should look similar to this
 
@@ -151,7 +157,8 @@ The final `config.h` should look similar to this
 ### Creating more API Keys
 
 At this point, or anytime in the future, we can create the API keys for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API key can be created by clicking on **_API Keys_** in the navigation on the left side. Then we click on **_+ Add API Key_** and create API keys.
-<img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="grafana cloud" />
+
+<img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="API keys" width="600"/>
 
 ### Visualised data in Grafana
 
@@ -166,17 +173,23 @@ We have created following Arduino libraries to make it easier for you to send da
 - https://github.com/grafana/arduino-prom-loki-transport
 - https://github.com/grafana/arduino-snappy-proto
 
-All libraries can be download and used directly trough your Arduino IDE Library manager:
+All libraries can be download and used directly trough your Arduino IDE Library manager.
 
-1. Open Arduino IDE
+Start with opening Arduino IDE. Then go to _Tools > Manage Libraries..._
 
-1. Go to _Tools > Manage Libraries..._
-![image](https://user-images.githubusercontent.com/30407135/122038232-aed73680-cdd5-11eb-8b54-d02a96f8f76b.png)
-1. Search for "Prometheus" and install **PrometheusArduino**, **PromLokiTransport**, **SnappyProto** (You may be prompted to install additional libraries, saying yes will be the easiest path but you can also install the necessary libraries manually, see below)
-![image](https://user-images.githubusercontent.com/30407135/122038308-c1517000-cdd5-11eb-8596-8612eb2248de.png)
-1. Search for "Loki" and install **GrafanaLoki**
-1. For list of additional libraries that you might need to install, refer to **[PrometheusArduino dependencies](https://github.com/grafana/prometheus-arduino#dependencies)** and **[GrafanaLoki dependencies](https://github.com/grafana/loki-arduino#dependencies)**
-1. For how to use PrometheusArduino and GrafanaLoki, refer to their READMEs and examples folder
+<img src="https://user-images.githubusercontent.com/30407135/122038232-aed73680-cdd5-11eb-8b54-d02a96f8f76b.png" alt="libraries" width="600"/>
+
+Search for _"Prometheus"_ and install **PrometheusArduino**, **PromLokiTransport**, **SnappyProto** (You may be prompted to install additional libraries, saying yes will be the easiest path but you can also install the necessary libraries manually, see below)
+
+<img src="https://user-images.githubusercontent.com/30407135/122038308-c1517000-cdd5-11eb-8596-8612eb2248de.png" alt="libraries" width="600"/>
+
+Search for _"Loki"_ and install **GrafanaLoki**
+
+<img src="https://user-images.githubusercontent.com/30407135/122043638-d7fac580-cddb-11eb-92bd-6c548596fa42.png" alt="libraries" width="600"/>
+
+For list of additional libraries that you might need to install, refer to **[PrometheusArduino dependencies](https://github.com/grafana/prometheus-arduino#dependencies)** and **[GrafanaLoki dependencies](https://github.com/grafana/loki-arduino#dependencies)**
+
+For how to use **[PrometheusArduino](https://github.com/grafana/prometheus-arduino)** and **[GrafanaLoki](https://github.com/grafana/loki-arduino)**, refer to their READMEs and examples folder
 
 ## Examples of projects built with Arduino and Grafana Cloud
 
