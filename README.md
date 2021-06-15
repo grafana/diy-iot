@@ -172,11 +172,11 @@ All libraries can be download and used directly trough your Arduino IDE Library 
 
 1. Go to _Tools > Manage Libraries..._
 ![image](https://user-images.githubusercontent.com/30407135/122038232-aed73680-cdd5-11eb-8b54-d02a96f8f76b.png)
-1. Search for "Prometheus" and install **PrometheusArduino**, **PromLokiTransport**, **SnappyProto**
+1. Search for "Prometheus" and install **PrometheusArduino**, **PromLokiTransport**, **SnappyProto** (You may be prompted to install additional libraries, saying yes will be the easiest path but you can also install the necessary libraries manually, see below)
 ![image](https://user-images.githubusercontent.com/30407135/122038308-c1517000-cdd5-11eb-8596-8612eb2248de.png)
 1. Search for "Loki" and install **GrafanaLoki**
 1. For list of additional libraries that you might need to install, refer to **[PrometheusArduino dependencies](https://github.com/grafana/prometheus-arduino#dependencies)** and **[GrafanaLoki dependencies](https://github.com/grafana/loki-arduino#dependencies)**
-1. For how to use PrometheusArduino and GrafanaLoki, refer to their READMEs ane examples folder
+1. For how to use PrometheusArduino and GrafanaLoki, refer to their READMEs and examples folder
 
 ## Examples of projects built with Arduino and Grafana Cloud
 
