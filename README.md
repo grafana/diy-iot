@@ -85,7 +85,7 @@ Then create an API key by clicking `Generate now`
 
 <img src="https://user-images.githubusercontent.com/10332331/121829204-df14bd00-cc8f-11eb-9829-17e48cacf47d.png" alt="send metrics" width="600"/>
 
-Give the key a meaingful name and choose `MetricsPublisher`
+Give the key a meaningful name and choose `MetricsPublisher`
 
 <img src="https://user-images.githubusercontent.com/10332331/121829290-184d2d00-cc90-11eb-91d3-78e0f6e4ec28.png" alt="send metrics" width="600"/>
 
