@@ -44,7 +44,6 @@ In the Arduino environment, the programs that we are writing are called sketches
 - Sketch can be compiled. Click on the **_Verify button_** on top of IDE. Verifying goes through your sketch, checks for errors and compiles it.
 - In the **_Tools > Board_** submenu, you’ve selected the correct type of development port
 - In the **_Tools > Port_** submenu, you’ve selected the new correct COM port
-- In the **_Tools > Board_** submenu, you’ve selected the correct type of development port
 
 Sketches are then uploaded to development board using **_Upload button_** on top of IDE.
 
