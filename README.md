@@ -81,13 +81,13 @@ Next copy the `Username / Instance ID`
 #define GC_USER "137822"
 ```
 
-Then create an API key by clicking `Generate now`
+Then create an API token by clicking `Generate now`
 
 <img src="https://user-images.githubusercontent.com/10332331/121829204-df14bd00-cc8f-11eb-9829-17e48cacf47d.png" alt="send metrics" width="600"/>
 
-Give the key a meaningful name and ensure the permission includes `metrics:write`.
+Give the token a meaningful name and ensure the permission includes `metrics:write`.
 
-Then click `Create API Key`
+Then click `Create token`
 
 Copy the value into the `GC_PASS` field
 
@@ -110,7 +110,7 @@ The final result should look something like:
 
 #### Sending Logs
 
-Similar to metrics, click the `Sending Logs` button
+Similar to metrics, click the `Send Logs` button
 
 <img src="https://user-images.githubusercontent.com/10332331/121830077-3ae04580-cc92-11eb-9663-a02e10a27349.png" alt="send logs" width="600"/>
 
@@ -130,7 +130,7 @@ Next grab the `User`
 #define GC_USER "8435"
 ```
 
-And now generate an API key by clicking `Generate now`
+And now generate an API token by clicking `Generate now`
 
 <img src="https://user-images.githubusercontent.com/10332331/121830638-6f083600-cc93-11eb-8e16-8ba44ddbffaa.png" alt="send logs" width="600"/>
 
@@ -149,11 +149,9 @@ The final `config.h` should look similar to this
 #define GC_PASS "eyJrIjoiMTkzNDFkMzM2YTNhZTRlNmE4ZDkyMjgzSTBhNGFiYTcwY2VjMzVjNiIsIm4iOiJlc3AzMi10ZXN0LTMiLCJpZCI6NDIwMDY1fQ=="
 ```
 
-### Creating more API Keys
+### Creating more API tokens
 
-At this point, or anytime in the future, we can create the API keys for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API key can be created by clicking on **_API Keys_** in the navigation on the left side. Then we click on **_+ Add API Key_** and create API keys.
-
-<img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="API keys" width="600"/>
+At this point, or anytime in the future, we can create the API tokens for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API token can be created by clicking on **_Access Policies_** in the navigation on the left side. Then we click on **_Create access policy_**.
 
 ### Visualised data in Grafana
 
