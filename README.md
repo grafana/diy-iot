@@ -23,7 +23,7 @@ To start, we are going to install [Arduino IDE](https://www.arduino.cc/en/Guide)
 
 This step is not necessary if Arduino hardware is used. If you decide to use ESP32 development boards _(we are using ESP32 boards in most of the projects listed below)_, we will need to do couple additional steps:
 
-1. If your OS won’t recognize the USB serial automatically, you’ll probably need to install **[CP210x USB to UART Bridge VCP Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)** that lets your computer communicate with your development board.
+1. If your OS does not recognize the USB serial automatically, you’ll probably need to install **[CP210x USB to UART Bridge VCP Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)** that lets your computer communicate with your development board.
 
 1. **Add ESP32 boards definition** that adds support for the EP32 board. Go to **_Arduino > Preferences_** and add url https://dl.espressif.com/dl/package_esp32_index.json to the Additional Boards Manager URLs input. This open-source board definition adds support for programming ESP32 boards.
    
@@ -44,7 +44,6 @@ In the Arduino environment, the programs that we are writing are called sketches
 - Sketch can be compiled. Click on the **_Verify button_** on top of IDE. Verifying goes through your sketch, checks for errors and compiles it.
 - In the **_Tools > Board_** submenu, you’ve selected the correct type of development port
 - In the **_Tools > Port_** submenu, you’ve selected the new correct COM port
-- In the **_Tools > Board_** submenu, you’ve selected the correct type of development port
 
 Sketches are then uploaded to development board using **_Upload button_** on top of IDE.
 
@@ -60,7 +59,7 @@ To start, we'll visit [Grafana Cloud signup](https://grafana.com/auth/sign-up/cr
 
 #### Sending Metrics
 
-To setup your project for sennding metrics, click on the `Send Metrics` button
+To set up your project for sending metrics, click on the `Send Metrics` button
 
 <img src="https://user-images.githubusercontent.com/10332331/121828047-63654100-cc8c-11eb-888c-6a3f331ecfea.png" alt="send metrics" width="600"/>
 
@@ -82,15 +81,13 @@ Next copy the `Username / Instance ID`
 #define GC_USER "137822"
 ```
 
-Then create an API key by clicking `Generate now`
+Then create an API token by clicking `Generate now`
 
 <img src="https://user-images.githubusercontent.com/10332331/121829204-df14bd00-cc8f-11eb-9829-17e48cacf47d.png" alt="send metrics" width="600"/>
 
-Give the key a meaingful name and choose `MetricsPublisher`
+Give the token a meaningful name and ensure the permission includes `metrics:write`.
 
-<img src="https://user-images.githubusercontent.com/10332331/121829290-184d2d00-cc90-11eb-91d3-78e0f6e4ec28.png" alt="send metrics" width="600"/>
-
-Then click `Create API Key`
+Then click `Create token`
 
 Copy the value into the `GC_PASS` field
 
@@ -113,7 +110,7 @@ The final result should look something like:
 
 #### Sending Logs
 
-Similar to metrics, click the `Sending Logs` button
+Similar to metrics, click the `Send Logs` button
 
 <img src="https://user-images.githubusercontent.com/10332331/121830077-3ae04580-cc92-11eb-9663-a02e10a27349.png" alt="send logs" width="600"/>
 
@@ -133,13 +130,11 @@ Next grab the `User`
 #define GC_USER "8435"
 ```
 
-And now generate an API key by clicking `Generate now`
+And now generate an API token by clicking `Generate now`
 
 <img src="https://user-images.githubusercontent.com/10332331/121830638-6f083600-cc93-11eb-8e16-8ba44ddbffaa.png" alt="send logs" width="600"/>
 
-Create a meaninful name and choose `MetricsPublisher`
-
-<img src="https://user-images.githubusercontent.com/10332331/121830668-834c3300-cc93-11eb-9c15-3cc323382824.png" alt="send logs" width="600"/>
+Create a meaningful name and ensure the permission includes `logs:write`.
 
 The final `config.h` should look similar to this
 
@@ -154,15 +149,13 @@ The final `config.h` should look similar to this
 #define GC_PASS "eyJrIjoiMTkzNDFkMzM2YTNhZTRlNmE4ZDkyMjgzSTBhNGFiYTcwY2VjMzVjNiIsIm4iOiJlc3AzMi10ZXN0LTMiLCJpZCI6NDIwMDY1fQ=="
 ```
 
-### Creating more API Keys
+### Creating more API tokens
 
-At this point, or anytime in the future, we can create the API keys for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API key can be created by clicking on **_API Keys_** in the navigation on the left side. Then we click on **_+ Add API Key_** and create API keys.
-
-<img src="https://user-images.githubusercontent.com/30407135/120992526-fbda5d80-c782-11eb-86d4-8d1e88df6a2e.png" alt="API keys" width="600"/>
+At this point, or anytime in the future, we can create the API tokens for Loki and Prometheus, to publish metrics from the monitoring system to these databases. The API token can be created by clicking on **_Access Policies_** in the navigation on the left side. Then we click on **_Create access policy_**.
 
 ### Visualised data in Grafana
 
-Hosted Loki & Prometheus instances are automatically added as data sources in your hosted Grafana. You can find them under the name `grafanacloud-NAME-logs` and `grafanacloud-NAME-prom`. You can use these data sources with data from monitoring solutions to create dahsboards or use them in Explore.
+Hosted Loki & Prometheus instances are automatically added as data sources in your hosted Grafana. You can find them under the name `grafanacloud-NAME-logs` and `grafanacloud-NAME-prom`. You can use these data sources with data from monitoring solutions to create dashboards or use them in Explore.
 
 ## Using Loki and Prometheus libraries
 
@@ -173,13 +166,13 @@ We have created following Arduino libraries to make it easier for you to send da
 - https://github.com/grafana/arduino-prom-loki-transport
 - https://github.com/grafana/arduino-snappy-proto
 
-All libraries can be download and used directly trough your Arduino IDE Library manager.
+All libraries can be downloaded and used directly through your Arduino IDE Library manager.
 
 Start with opening Arduino IDE. Then go to _Tools > Manage Libraries..._
 
 <img src="https://user-images.githubusercontent.com/30407135/122038232-aed73680-cdd5-11eb-8b54-d02a96f8f76b.png" alt="libraries" width="600"/>
 
-Search for _"Prometheus"_ and install **PrometheusArduino**, **PromLokiTransport**, **SnappyProto** (You may be prompted to install additional libraries, saying yes will be the easiest path but you can also install the necessary libraries manually, see below)
+Search for _"Prometheus"_ and install **PrometheusArduino**, **PromLokiTransport**, **SnappyProto** (You may be prompted to install additional libraries, saying yes will be the easiest path, but you can also install the necessary libraries manually, see below)
 
 <img src="https://user-images.githubusercontent.com/30407135/122038308-c1517000-cdd5-11eb-8596-8612eb2248de.png" alt="libraries" width="600"/>
 
@@ -193,7 +186,7 @@ For how to use **[PrometheusArduino](https://github.com/grafana/prometheus-ardui
 
 ## Examples of projects built with Arduino and Grafana Cloud
 
-We have created couple of DIY IoT projects that you can easily create by yourself. These project have README that contains all information needed for you to re-create them.
+We have created a couple of DIY IoT projects that you can easily create by yourself. These project have README that contains all information needed for you to re-create them.
 
 1. [Room comfort monitoring](https://github.com/ivanahuckova/room_comfort_monitoring_grafana)
 1. [Sourdough monitoring](https://github.com/ivanahuckova/sourdough_monitoring_grafana)
